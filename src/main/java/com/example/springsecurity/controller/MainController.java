@@ -32,21 +32,31 @@ public class MainController {
 		return "login";
 		}
 	
+//	@GetMapping({"/logout"})
+//	public String logoutt() {
+//		return "/registration";
+//		}
+//	
+//	@PostMapping({"/logout"})
+//	public String logout() {
+//		return "/registration";
+//		}
+	
 	@PostMapping("/login")
 	public String longinresponse(String username, String password,HttpServletRequest request, HttpServletResponse response) {
 		boolean loginResponse = securityService.longin(username, password,request, response);
 
 		if(loginResponse) {
-			return "index";
+			return "home";
 		}
 		return "login";
 		
 	}
 	
-//	@GetMapping("/index")
-//	public String index() {
-//		return "index";
-//		}
+	@GetMapping("/index")
+	public String index() {
+		return "index";
+		}
 	
 	@GetMapping("/registration")
 	public String registration() {

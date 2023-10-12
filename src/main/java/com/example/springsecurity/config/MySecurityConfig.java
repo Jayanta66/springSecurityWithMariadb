@@ -50,9 +50,9 @@ public class MySecurityConfig {
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests()
 		
-			.requestMatchers("/","/login","/registration","/index","/registration","/","/log","/regis")
+			.requestMatchers("/","/login","/registration","/index","/registration","/","/logoutSuccessUrl","/logout")
 			.permitAll()
-			.requestMatchers(HttpMethod.GET,"/","/log","/regis")
+			.requestMatchers(HttpMethod.GET,"/")
 			.hasAnyRole("user","admin")
 			.requestMatchers(HttpMethod.POST,"/login","/registration","/index","/registration")
 			.hasAnyRole("user","admin")	
