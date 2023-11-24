@@ -1,0 +1,17 @@
+server:
+  port: 8081
+  
+spring:
+   datasource:
+      url: jdbc:mariadb://${DB_HOST:localhost}:3306/newdb
+      username: jay
+      password: 1234
+
+   jpa:
+     database-platform: org.hibernate.dialect.MariaDBDialect
+     hibernate:
+      ddl-auto: create
+   application:
+      name: SPRING-SECURITY 
+      config:
+        import: configserver:http://localhost:9296
